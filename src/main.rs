@@ -4,7 +4,7 @@ use std::{io::{stdin, Read, Stderr}, process::Stdio};
 mod Algorithims;
 // Fletcher16 
 
-use Algorithims::Fletcher::*;
+use Algorithims::Adler::*;
 
 fn main() {
     loop { 
@@ -14,6 +14,6 @@ fn main() {
         let input_stripped = str::from_utf8(&input).unwrap().trim_matches(['\n', '\r','\0']).as_bytes();
         let input_len = input_stripped.len();
 
-        println!("Checksum: {:x}", Fletcher_32(input_stripped));
+        println!("Checksum: {:x}", Adler_32(input_stripped));
     }
 }
